@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ads{% endblock %}
+{% block content %}
+<h2>Ads</h2>
+<ul>
+    {% for ad in ads %}
+        <li><a href="{% url 'ad-detail' ad.id %}">{{ ad.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

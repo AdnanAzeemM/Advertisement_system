@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if update %}Update Advertisement{% else %}Create Advertisement{% endif %}{% endblock %}
+
+{% block content %}
+    <h1>{% if update %}Update Advertisement{% else %}Create Advertisement{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'advertisement-list' %}">Back to list</a>
+{% endblock %}
+

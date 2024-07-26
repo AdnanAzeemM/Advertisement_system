@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ads/css/style.css' %}">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Advertisement</h1>
+            <nav>
+                <a href="{% url 'location-list' %}">Locations</a>
+                <a href="{% url 'ad-list' %}">Ads</a>
+                <a href="{% url 'advertisement-list' %}">Advertisements</a>
+            </nav>
+        </div>
+    </header>
+    <section class="main">
+
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <p>© 2024 Advertisement</p>
+                <p>adnanazeem30@gmail.com</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

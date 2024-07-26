@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Location Detail{% endblock %}
+{% block content %}
+<h2>{{ location.name }}</h2>
+<p>Address: {{ location.address }}</p>
+<p>Country: {{ location.country }}</p>
+<p>Max Visitors: {{ location.max_visitors }}</p>
+<p>Coordinates: {{ location.latitude }}, {{ location.longitude }}</p>
+{% endblock %}

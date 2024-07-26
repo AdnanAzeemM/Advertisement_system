@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ad Detail{% endblock %}
+{% block content %}
+<h2>{{ ad.name }}</h2>
+<p>Start Date: {{ ad.start_date }}</p>
+<p>End Date: {{ ad.end_date }}</p>
+{% endblock %}

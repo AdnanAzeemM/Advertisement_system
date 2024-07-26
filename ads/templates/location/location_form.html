@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% if update %}Update Location{% else %}Create Location{% endif %}{% endblock %}
+
+{% block content %}
+    <h1>{% if update %}Update Location{% else %}Create Location{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'location-list' %}">Back to list</a>
+{% endblock %}
+

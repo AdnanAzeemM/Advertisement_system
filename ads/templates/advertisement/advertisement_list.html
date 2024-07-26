@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Advertisement List{% endblock %}
+
+{% block content %}
+    <h1>Advertisements</h1>
+    <form method="GET" action="{% url 'advertisement-list' %}">
+        <input type="text" name="location" placeholder="Search by location">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for advertisement in advertisements %}
+            <li>{{ advertisement.ad.name }} at {{ advertisement.location.name }} - {{ advertisement.daily_visitors }} visitors</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
